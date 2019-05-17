@@ -4,7 +4,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -70,14 +69,14 @@ public class AuthentificationController {
 			topCollegue.setPhotoUrl(authenticationRequest.getPhoto());
 		}
 
-//provoque nullpointexception
+//provoque nullpointexception sur topCollegue.getId()
 //		if (topCoolRepo.existsById(topCollegue.getId().toString())) {
 //			throw new RepositoryException("ce collègue est déjà enregistré");
 //		} else {
 //			topCoolRepo.save(topCollegue);
 //			return result;
 //		}
-//provoque des doublons en base de donnée
+//provoque des doublons en base de données
 		topCoolRepo.save(topCollegue);
 		return result;
 
